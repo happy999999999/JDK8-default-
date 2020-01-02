@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         MyInterfaceImpl myInterface = new MyInterfaceImpl();
-        myInterface.a();
-        myInterface.b();
+        myInterface.a();//输出this is default method a
+        myInterface.b();//输出this is new method b
     }
 }
 
