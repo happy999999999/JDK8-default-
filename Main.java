@@ -1,47 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        Father father = new Child();
-        father.say();
-
+        MyInterfaceImpl myInterface = new MyInterfaceImpl();
+        myInterface.a();
+        myInterface.b();
     }
 }
 
-class Father{
-    private String name;
-    private int age;
 
-    public String getName() {
-        return name;
+interface MyInterface{
+    //default关键字实现接口有非抽象方法
+    public default void a(){
+        System.out.println("this is default method a");
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Father{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    private void say(){
-        System.out.println("this is father say");
+    default void b(){
+        System.out.println("this is default method b");
     }
 }
 
-class Child extends Father{
-    @Override
-    public String toString() {
-        return "Child{}";
+class MyInterfaceImpl implements MyInterface{
+    public void b(){
+        System.out.println("this is new method b");
     }
 }
